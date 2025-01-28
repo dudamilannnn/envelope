@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbecec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.envelope {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+
+.envelope .flap {
+    position: absolute;
+    width: 150px;
+    height: 75px;
+    background: #ff4e50;
+    transform-origin: top center;
+    transform: perspective(400px) rotateX(0deg);
+    transition: transform 1s ease-in-out;
+    z-index: 2;
+}
+
+.envelope .body {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background: #ff4e50;
+    z-index: 1;
+}
+
+.mensagem {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #ff4e50;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: appear 0.5s ease-in-out;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
